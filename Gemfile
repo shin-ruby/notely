@@ -22,7 +22,7 @@ gem 'puma'
 
 # API
 gem 'active_model_serializers', '0.9.2'
-gem 'devise'
+gem 'devise', '~> 4.0.0.rc2'
 gem 'doorkeeper'
 
 group :development, :test do
