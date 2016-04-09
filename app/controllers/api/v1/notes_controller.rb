@@ -3,8 +3,10 @@ module Api
     class NotesController < ApplicationController
       before_action :set_note, only: [:show, :update, :destroy]
 
-      doorkeeper_for :index, :show,    :scopes => [:public]
-      doorkeeper_for :update, :create, :scopes => [:write, :update, :destroy]
+      before_action -> { doorkeeper_authorize! :public }, only: :index
+      before_action only: [:create, :update, :destroy] do
+        doorkeeper_authorize! :write, :update
+      end
 
       # GET /notes
       def index

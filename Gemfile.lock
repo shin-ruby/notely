@@ -150,6 +150,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   tzinfo-data
+  warden
 
 BUNDLED WITH
    1.11.2
